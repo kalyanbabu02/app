@@ -1,0 +1,25 @@
+Table: Room
+- id (int, primary key)
+- room_number (int)
+- room_type (varchar)
+- price (decimal)
+
+Table: Guest
+- id (int, primary key)
+- name (varchar)
+- email (varchar)
+- phone_number (varchar)
+
+Table: Reservation
+- id (int, primary key)
+- guest_id (int, foreign key to Guest.id)
+- room_id (int, foreign key to Room.id)
+- check_in_date (date)
+- check_out_date (date)
+- total_price (decimal)
+
+Table: Payment
+- id (int, primary key)
+- reservation_id (int, foreign key to Reservation.id)
+- amount (decimal)
+- payment_date (datetime)
